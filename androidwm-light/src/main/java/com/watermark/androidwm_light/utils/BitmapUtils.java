@@ -25,7 +25,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Environment;
-import android.support.v4.content.res.ResourcesCompat;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.TypedValue;
@@ -39,7 +38,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import timber.log.Timber;
+import androidx.core.content.res.ResourcesCompat;
+
 
 /**
  * Util class for operations with {@link Bitmap}.
@@ -61,7 +61,6 @@ public class BitmapUtils {
         if (watermarkText.getTextAlpha() >= 0 && watermarkText.getTextAlpha() <= 255) {
             watermarkPaint.setAlpha(watermarkText.getTextAlpha());
         }
-
         float value = (float) watermarkText.getTextSize();
         int pixel = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 value, context.getResources().getDisplayMetrics());
@@ -75,7 +74,6 @@ public class BitmapUtils {
                     watermarkText.getTextShadowYOffset(),
                     watermarkText.getTextShadowColor());
         }
-
         if (watermarkText.getTextFont() != 0) {
             Typeface typeface = ResourcesCompat.getFont(context, watermarkText.getTextFont());
             watermarkPaint.setTypeface(typeface);
@@ -136,7 +134,7 @@ public class BitmapUtils {
     public static void saveAsPNG(Bitmap inputBitmap, String filePath, boolean withTime) {
         String sdStatus = Environment.getExternalStorageState();
         if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) {
-            Timber.e("SD card is not available/writable right now.");
+//            Timber.e("SD card is not available/writable right now.");
         }
 
         @SuppressLint("SimpleDateFormat") String timeStamp =
@@ -152,14 +150,14 @@ public class BitmapUtils {
             inputBitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
             // PNG is a lossless format, the compression factor (100) is ignored
         } catch (Exception e) {
-            Timber.e(e.toString());
+//            Timber.e(e.toString());
         } finally {
             try {
                 if (out != null) {
                     out.close();
                 }
             } catch (IOException e) {
-                Timber.e(e.toString());
+//                Timber.e(e.toString());
             }
         }
     }

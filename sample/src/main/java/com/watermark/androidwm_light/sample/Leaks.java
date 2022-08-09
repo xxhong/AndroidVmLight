@@ -18,7 +18,6 @@ package com.watermark.androidwm_light.sample;
 
 import android.app.Application;
 
-import com.squareup.leakcanary.LeakCanary;
 
 /**
  * To detect the memory leaks.
@@ -28,6 +27,5 @@ public class Leaks extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        LeakCanary.install(this);
     }
 }

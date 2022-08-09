@@ -19,8 +19,8 @@ package com.watermark.androidwm_light.bean;
 
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.ColorInt;
-import android.support.annotation.FontRes;
+import androidx.annotation.ColorInt;
+import androidx.annotation.FontRes;
 import android.widget.EditText;
 import android.widget.TextView;
 

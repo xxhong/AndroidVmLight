@@ -19,7 +19,6 @@ package com.watermark.androidwm_light.sample;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +29,8 @@ import com.bumptech.glide.Glide;
 import com.watermark.androidwm_light.WatermarkBuilder;
 import com.watermark.androidwm_light.bean.WatermarkImage;
 import com.watermark.androidwm_light.bean.WatermarkText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * This is the sample for library: androidwm.
